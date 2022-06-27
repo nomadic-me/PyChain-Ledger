@@ -23,10 +23,16 @@ streamlit run pychain.py
 
 *Streamlit Webapp*
 
+This is the screenshot of the whole web application
+
 ![alt="Streamlit Webapp"](Images/StreamlitApp.png)
 
 
 *Streamlit Webapp: Block Inspector*
+
+This Feature tesst the PyChain Ledger by storing Records and displaying them in the dropdown for inspection
+
+Location of UI Element: *Left Hand Column: Top Section*
 
 ![alt="Streamlit Webapp: Block Inspector"](Images/BlockInspector-DropDown.png)
 
@@ -34,5 +40,9 @@ streamlit run pychain.py
 
 
 *Streamlit Webapp: Validate Chain*
+
+This Feature tests the validity of the PyChain Ledger
+
+Location of UI Element: *Right Hand Column: Bottom Section*
 
 ![alt="Streamlit Webapp: Validate Chain"](Images/ValidateChain.png)
