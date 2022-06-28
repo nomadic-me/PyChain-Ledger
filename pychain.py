@@ -130,7 +130,7 @@ if st.button("Add Block"):
     )
 
     pychain.add_block(new_block)
-    st.balloons()
+    #st.balloons()
 
 ################################################################################
 # Streamlit Code (continues)
@@ -148,10 +148,30 @@ selected_block = st.sidebar.selectbox(
     "Which block would you like to see?", pychain.chain
 )
 
+
+
+################################################################################
+# Adding Some "Programtically" modifying the Data inside the block
+# to simulate a block level hack 
+# and show that the "Block Inspector" will return a False
+
+
+
 st.sidebar.write(selected_block)
 if st.button("Validate Chain"):
     st.write(pychain.is_valid())
 
+    
+st.write("## Simulate Hack: Block Data Editor")
+if st.button(" Double the value of amount in Block 1"):
+    pychain.chain[1].record = Record(pychain.chain[1].record.sender, pychain.chain[1].record.receiver, float(pychain.chain[1].record.amount)*2)
+    
+if st.button("Interchange the Sender and Reciever Block 1"):
+    pychain.chain[1].record = Record(pychain.chain[1].record.receiver, pychain.chain[1].record.sender, pychain.chain[1].record.amount)
+      
+pychain_df = pd.DataFrame(pychain.chain).astype(str)
+st.write(pychain_df)
+        
 ################################################################################
 
 # Test the PyChain Ledger by Storing Records
